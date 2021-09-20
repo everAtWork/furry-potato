@@ -1,19 +1,19 @@
 const { static } = require("express")
 
-class ApiError {
-    constructor(status, msg) {
+class ApiError extends Error {
+    constructor(status, message) {
         super()
         this.status = status
-        this.msg = msg
+        this.message = message
     }
-    static badRequest(msg){
-        return new ApiError(404, msg)
+    static badRequest(message){
+        return new ApiError(404, message)
     }
-    static internal(msg){
-        return new ApiError(500, msg)
+    static internal(message){
+        return new ApiError(500, message)
     }
-    static forbidden(msg){
-        return new ApiError(403, msg)
+    static forbidden(message){
+        return new ApiError(403, message)
     }
 }
 

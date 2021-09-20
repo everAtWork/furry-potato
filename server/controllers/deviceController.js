@@ -2,9 +2,6 @@ const uuid = require('uuid')
 const path = require('path')
 const ApiError = require('../error/ApiError')
 const {Device, DeviceInfo} = require('../models/models')
-const { nextTick } = require('process')
-const { Where } = require('sequelize/types/lib/utils')
-const { JSON } = require('sequelize/types')
 
 
 class DeviceController {
@@ -21,9 +18,9 @@ class DeviceController {
                 info = JSON.parse(info)
                 info.forEach(i => {
                     DeviceInfo.create({
-                        title = i.title,
-                        description = i.description,
-                        deviceId = device.id
+                        title: i.title,
+                        description: i.description,
+                        deviceId: device.id
                     })
                 });
             }
@@ -31,7 +28,7 @@ class DeviceController {
             return res.json(device)
             
     } catch (e) {
-        nextTick(ApiError.badRequest(e.msg))
+        next(ApiError.badRequest(e.message))
     }
 }
     async getAll(req,res){

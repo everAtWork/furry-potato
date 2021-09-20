@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": ["e-commerce template", "express", "sequelize", "dotenv"],
+  "author": "wladyslawko",
+  "license": "MIT"
 }
