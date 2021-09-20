@@ -3,6 +3,7 @@ const path = require('path')
 const ApiError = require('../error/ApiError')
 const {Device} = require('../models/models')
 const { nextTick } = require('process')
+const { Where } = require('sequelize/types/lib/utils')
 
 
 class DeviceController {
@@ -22,7 +23,21 @@ class DeviceController {
     }
 }
     async getAll(req,res){
-
+        const {brandId, typeId} = req.query
+        let devicesGotten // возвращаемое
+        if (!brandId && !typeId) {
+            devicesGotten = Device.findAll()
+        }
+        if (brandId && !typeId) {   
+            devicesGotten = Device.findAll({where:{brandId}})
+        }
+        if (!brandId && typeId) {
+            devicesGotten = Device.findAll({where:{typeId}})
+        }
+        if (brandId && typeId) {
+            devicesGotten = Device.findAll({where:{brandId, typeId}})
+        }
+        return res.json(devicesGotten)
     }
     async getSingleDevice(req,res){
         // const query = req.query
