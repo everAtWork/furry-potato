@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DevicePage  () {
+export default function DevicePage() {
     return (
         <div>
             DevicePage  
