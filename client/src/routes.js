@@ -1,11 +1,14 @@
-import AdminPage from "./pages/AdminPanel"
-import Shop from "./pages/Shop"
-import { ADMIN_ROUTE } from "./utils/consts"
+import AdminPanel from './pages/AdminPanel'
+import Basket from './pages/Basket'
+import Device from './pages/DevicePage'
+import Auth from './pages/Auth'
+import Shop from './pages/Shop'
+import { ADMIN_ROUTE, SIGNUP_ROUTE, SHOP_ROUTE, BASKET_ROUTE, LOGIN_ROUTE, DEVICE_ROUTE } from "./utils/consts"
 
 export const authRoutes = [
     {
         path: ADMIN_ROUTE,
-        Component: AdminPage
+        Component: AdminPanel
     },
     {
         path: BASKET_ROUTE,
