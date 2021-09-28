@@ -3,15 +3,15 @@ export default class DeviceStore {
     constructor() {
         this._types = [
             {id: 1, name: "Смартфоны"},
-            {id: 2, name: "Мультиварки"}
+            {id: 2, name: "Мультиварки"},
             {id: 3, name: "Телевизоры"},
             {id: 4, name: "Ноутбуки"}
         ]
         this._brands = [
             {id: 1, name: "Apple"},
-            {id: 2, name: "Redmond"}
+            {id: 2, name: "Redmond"},
             {id: 3, name: "BANG & OLUFSEN"},
-            {id: 4, name: "MEIZU"}
+            {id: 4, name: "MEIZU"},
             {id: 5, name: "Samsung"},
             {id: 6, name: "WDS"}
         ]
