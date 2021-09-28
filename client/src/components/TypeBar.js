@@ -1,6 +1,7 @@
-import React from 'react'
-import {observer} from 'mobx'
+import React, {useContext} from 'react'
+import {observer} from 'mobx-react-lite'
 import { ListGroup, ListGroupItem } from 'react-bootstrap'
+import { Context } from '../index'
 
 const TypeBar = observer(() => {
     const {device} = useContext(Context)

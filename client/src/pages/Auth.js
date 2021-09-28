@@ -7,9 +7,6 @@ const Auth = () => {
     const location = useLocation()
     const isLogged = location.pathname === LOGIN_ROUTE
     console.log(location)
-}
-
-export default function Auth() {
     return (
         <Container style={{height: window.innerHeight - 54 }} className="d-flex justify-content-center align-items-center">
             <Card style={{width: 600}}>
@@ -35,3 +32,4 @@ export default function Auth() {
         </Container>
     )
 }
+export default Auth;
