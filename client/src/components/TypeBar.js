@@ -6,9 +6,11 @@ const TypeBar = observer(() => {
     const {device} = useContext(Context)
     return (
         <ListGroup>
-            <ListGroupItem>Cras justo odio</ListGroupItem>
-            <ListGroupItem>Justo cras odio</ListGroupItem>
-            <ListGroupItem>Cras odio justo</ListGroupItem>
+            {device.types.map(type => {
+                <ListGroupItem key={type.id}>
+                    {type.name}
+                </ListGroupItem>
+            })}
         </ListGroup>
     )
 })
